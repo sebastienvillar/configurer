@@ -15,6 +15,7 @@
 		4D11BEBE1AF529E800469B7B /* SVAXValueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEBD1AF529E800469B7B /* SVAXValueExtension.swift */; };
 		4D11BEC01AF52CCA00469B7B /* SVWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */; };
 		4D11BEC21AF52D0D00469B7B /* SVAXUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEC11AF52D0D00469B7B /* SVAXUIElementExtension.swift */; };
+		4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEC31AF535F700469B7B /* SVScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4D11BEBD1AF529E800469B7B /* SVAXValueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVAXValueExtension.swift; sourceTree = "<group>"; };
 		4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVWindow.swift; sourceTree = "<group>"; };
 		4D11BEC11AF52D0D00469B7B /* SVAXUIElementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVAXUIElementExtension.swift; sourceTree = "<group>"; };
+		4D11BEC31AF535F700469B7B /* SVScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				4D11BE981AF3C05600469B7B /* Supporting Files */,
 				4D11BEB51AF5030400469B7B /* SVApplication.swift */,
 				4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */,
+				4D11BEC31AF535F700469B7B /* SVScreen.swift */,
 				4D11BEBD1AF529E800469B7B /* SVAXValueExtension.swift */,
 				4D11BEC11AF52D0D00469B7B /* SVAXUIElementExtension.swift */,
 			);
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */,
 				4D11BEBE1AF529E800469B7B /* SVAXValueExtension.swift in Sources */,
 				4D11BEB61AF5030400469B7B /* SVApplication.swift in Sources */,
 				4D11BEC01AF52CCA00469B7B /* SVWindow.swift in Sources */,
