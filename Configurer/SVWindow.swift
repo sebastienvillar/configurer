@@ -37,4 +37,9 @@ class SVWindow: NSObject {
     
     super.init()
   }
+  
+  func setFullScreen() {
+    var fullScreenButton: AXUIElementRef? = self.element.getAttribute(kAXFullScreenButtonAttribute)
+    AXUIElementPerformAction(fullScreenButton, kAXPressAction)
+  }
 }
