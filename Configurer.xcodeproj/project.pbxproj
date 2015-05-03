@@ -16,6 +16,8 @@
 		4D11BEC01AF52CCA00469B7B /* SVWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */; };
 		4D11BEC21AF52D0D00469B7B /* SVAXUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEC11AF52D0D00469B7B /* SVAXUIElementExtension.swift */; };
 		4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEC31AF535F700469B7B /* SVScreen.swift */; };
+		4D864BBE1AF64A2900567588 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D864BBD1AF64A2900567588 /* SVRootViewController.swift */; };
+		4D864BC01AF6578B00567588 /* SVApplicationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVWindow.swift; sourceTree = "<group>"; };
 		4D11BEC11AF52D0D00469B7B /* SVAXUIElementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVAXUIElementExtension.swift; sourceTree = "<group>"; };
 		4D11BEC31AF535F700469B7B /* SVScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVScreen.swift; sourceTree = "<group>"; };
+		4D864BBD1AF64A2900567588 /* SVRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
+		4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVApplicationsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				4D11BE9E1AF3C05600469B7B /* MainMenu.xib */,
 				4D11BE981AF3C05600469B7B /* Supporting Files */,
 				4D11BEB51AF5030400469B7B /* SVApplication.swift */,
+				4D864BBD1AF64A2900567588 /* SVRootViewController.swift */,
+				4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */,
 				4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */,
 				4D11BEC31AF535F700469B7B /* SVScreen.swift */,
 				4D11BEBD1AF529E800469B7B /* SVAXValueExtension.swift */,
@@ -221,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */,
+				4D864BC01AF6578B00567588 /* SVApplicationsManager.swift in Sources */,
 				4D11BEBE1AF529E800469B7B /* SVAXValueExtension.swift in Sources */,
+				4D864BBE1AF64A2900567588 /* SVRootViewController.swift in Sources */,
 				4D11BEB61AF5030400469B7B /* SVApplication.swift in Sources */,
 				4D11BEC01AF52CCA00469B7B /* SVWindow.swift in Sources */,
 				4D11BEC21AF52D0D00469B7B /* SVAXUIElementExtension.swift in Sources */,
@@ -416,6 +424,7 @@
 				4D11BEB11AF3C05600469B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D11BEB21AF3C05600469B7B /* Build configuration list for PBXNativeTarget "ConfigurerTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +433,7 @@
 				4D11BEB41AF3C05600469B7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
