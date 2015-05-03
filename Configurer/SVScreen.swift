@@ -9,11 +9,13 @@
 import Foundation
 import AppKit
 
-enum kSVScreenArea {
-  case TopHalf, TopLeftQuadran, TopRightQuadran
-  case BottomHalf, BottomLeftQuadran, BottomRightQuadran
-  case LeftHalf, RightHalf
-  case Full
+enum kSVScreenArea: String {
+  case TopHalf = "TopHalf", TopLeftQuadran = "TopLeftQuadran", TopRightQuadran = "TopRightQuadran"
+  case BottomHalf = "BottomHalf", BottomLeftQuadran = "BottomLeftQuadran", BottomRightQuadran = "BottomRightQuadran"
+  case LeftHalf = "LeftHalf", RightHalf = "RightHalf"
+  case Full = "Full"
+  
+  static let allValues = [TopHalf, TopLeftQuadran, TopRightQuadran, BottomHalf, BottomLeftQuadran, BottomRightQuadran, LeftHalf, RightHalf, Full]
 }
 
 class SVScreen: NSObject {
@@ -31,57 +33,59 @@ class SVScreen: NSObject {
   }
   
   func rectForArea(area: kSVScreenArea) -> CGRect {
+    var topOffset = self.screen.frame.size.height - self.screen.visibleFrame.size.height - self.screen.visibleFrame.origin.y
+
     switch area {
     case .TopHalf:
-      return CGRectMake(self.screen.frame.origin.x,
-                        self.screen.frame.origin.y,
-                        self.screen.frame.size.width,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x,
+                        topOffset,
+                        self.screen.visibleFrame.size.width,
+                        self.screen.visibleFrame.size.height / 2)
 
     case .TopLeftQuadran:
-      return CGRectMake(self.screen.frame.origin.x,
-                        self.screen.frame.origin.y,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x,
+                        topOffset,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height / 2)
 
     case .TopRightQuadran:
-      return CGRectMake(self.screen.frame.origin.x + self.screen.frame.size.width / 2,
-                        self.screen.frame.origin.y,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x + self.screen.visibleFrame.size.width / 2,
+                        topOffset,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height / 2)
       
     case .BottomHalf:
-      return CGRectMake(self.screen.frame.origin.x,
-                        self.screen.frame.origin.y + self.screen.frame.size.height / 2,
-                        self.screen.frame.size.width,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x,
+                        topOffset + self.screen.visibleFrame.size.height / 2,
+                        self.screen.visibleFrame.size.width,
+                        self.screen.visibleFrame.size.height / 2)
 
     case .BottomLeftQuadran:
-      return CGRectMake(self.screen.frame.origin.x,
-                        self.screen.frame.origin.y + self.screen.frame.size.height / 2,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x,
+                        topOffset + self.screen.visibleFrame.size.height / 2,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height / 2)
 
     case .BottomRightQuadran:
-      return CGRectMake(self.screen.frame.origin.x + self.screen.frame.size.width / 2,
-                        self.screen.frame.origin.y + self.screen.frame.size.height / 2,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height / 2)
+      return CGRectMake(self.screen.visibleFrame.origin.x + self.screen.visibleFrame.size.width / 2,
+                        topOffset + self.screen.visibleFrame.size.height / 2,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height / 2)
       
     case .LeftHalf:
-      return CGRectMake(self.screen.frame.origin.x,
-                        self.screen.frame.origin.y,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height)
+      return CGRectMake(self.screen.visibleFrame.origin.x,
+                        topOffset,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height)
 
     case .RightHalf:
-      return CGRectMake(self.screen.frame.origin.x + self.screen.frame.size.width / 2,
-                        self.screen.frame.origin.y,
-                        self.screen.frame.size.width / 2,
-                        self.screen.frame.size.height)
+      return CGRectMake(self.screen.visibleFrame.origin.x + self.screen.visibleFrame.size.width / 2,
+                        topOffset,
+                        self.screen.visibleFrame.size.width / 2,
+                        self.screen.visibleFrame.size.height)
       
     case .Full:
-      return self.screen.frame
+      return self.screen.visibleFrame
 
     default:
       return CGRectNull
