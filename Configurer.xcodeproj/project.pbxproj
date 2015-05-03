@@ -18,6 +18,7 @@
 		4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11BEC31AF535F700469B7B /* SVScreen.swift */; };
 		4D864BBE1AF64A2900567588 /* SVRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D864BBD1AF64A2900567588 /* SVRootViewController.swift */; };
 		4D864BC01AF6578B00567588 /* SVApplicationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */; };
+		4D864BCE1AF687D500567588 /* SVApplicationsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D864BCD1AF687D500567588 /* SVApplicationsConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		4D11BEC31AF535F700469B7B /* SVScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVScreen.swift; sourceTree = "<group>"; };
 		4D864BBD1AF64A2900567588 /* SVRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVRootViewController.swift; sourceTree = "<group>"; };
 		4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVApplicationsManager.swift; sourceTree = "<group>"; };
+		4D864BCD1AF687D500567588 /* SVApplicationsConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVApplicationsConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				4D11BEB51AF5030400469B7B /* SVApplication.swift */,
 				4D864BBD1AF64A2900567588 /* SVRootViewController.swift */,
 				4D864BBF1AF6578B00567588 /* SVApplicationsManager.swift */,
+				4D864BCD1AF687D500567588 /* SVApplicationsConfiguration.swift */,
 				4D11BEBF1AF52CCA00469B7B /* SVWindow.swift */,
 				4D11BEC31AF535F700469B7B /* SVScreen.swift */,
 				4D11BEBD1AF529E800469B7B /* SVAXValueExtension.swift */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D11BEC41AF535F700469B7B /* SVScreen.swift in Sources */,
+				4D864BCE1AF687D500567588 /* SVApplicationsConfiguration.swift in Sources */,
 				4D864BC01AF6578B00567588 /* SVApplicationsManager.swift in Sources */,
 				4D11BEBE1AF529E800469B7B /* SVAXValueExtension.swift in Sources */,
 				4D864BBE1AF64A2900567588 /* SVRootViewController.swift in Sources */,
