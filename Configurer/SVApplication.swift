@@ -9,26 +9,34 @@
 import Foundation
 import Cocoa
 
+let LAUNCH_CALLBACKS_DISPATCH_DURATION = Int64(0.2 * pow(10,9)) // nanoseconds
+let TIMEOUT_DURATION = NSTimeInterval(5) // seconds
+
 class SVApplication : NSObject {
   private let path: String
   private var element: AXUIElementRef?
   private var pid: pid_t?
   private var launchObserver: NSObjectProtocol?
   private var launchCallbacks = Array<Void -> Void>()
+  private var launchCallbacksTimeoutDate: NSDate?
   
-  lazy var window: SVWindow? = { [unowned self] in
-    var windowElement: AXUIElementRef? = self.element?.getAttribute(kAXMainWindowAttribute)
-    if windowElement != nil {
-      return SVWindow(element: windowElement!)
+  var window: SVWindow? {
+    get {
+      var windowElement: AXUIElementRef? = self.element?.getAttribute(kAXMainWindowAttribute)
+      if windowElement != nil {
+        return SVWindow(element: windowElement!)
+      }
+      
+      return nil
     }
-    
-    return nil
-  }()
+  }
   
   init(path: String) {
     self.path = path
     
     super.init()
+    
+
     
     self.startObservingLaunch()
   }
@@ -56,13 +64,35 @@ class SVApplication : NSObject {
           // Fill missing data
           self.pid = runningApplication?.processIdentifier
           self.element = AXUIElementCreateApplication(self.pid!).takeUnretainedValue()
-          
-          // Launch callbacks
-          for callback in self.launchCallbacks {
-            callback()
-          }
           self.stopObservingLaunch()
+          self.runLaunchCallbacks()
         }
+      }
+    }
+  }
+  
+  private func runLaunchCallbacks() {
+    if (self.launchCallbacksTimeoutDate == nil) {
+      self.launchCallbacksTimeoutDate = NSDate().dateByAddingTimeInterval(TIMEOUT_DURATION)
+    }
+    
+    // Timed out
+    if NSDate().compare(self.launchCallbacksTimeoutDate!) == NSComparisonResult.OrderedDescending {
+      return
+    }
+    
+    // If window exists, launch callbacks
+    if self.window != nil {
+      for callback in self.launchCallbacks {
+        callback()
+      }
+    }
+    
+    // Else delay callbacks until it exists or times out
+    else {
+      var dispatch = dispatch_time(DISPATCH_TIME_NOW, LAUNCH_CALLBACKS_DISPATCH_DURATION)
+      dispatch_after(dispatch, dispatch_get_main_queue()) { [weak self] in
+        self?.runLaunchCallbacks()
       }
     }
   }
